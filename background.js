@@ -1,10 +1,8 @@
 //try to fire a notification every 1 minute
-chrome.alarms.create({
-    delayInMinutes: 0.0,
-    periodInMinutes: 1.0
-});
 
-chrome.alarms.onAlarm.addListener(function () {
+
+setInterval(function () {
+
     chrome.notifications.create(
         "1", {
         iconUrl: chrome.runtime.getURL("icons/128.png"),
@@ -17,4 +15,5 @@ chrome.alarms.onAlarm.addListener(function () {
         function () { }
     );
 
-});
+}, 60000 * 1);
+
